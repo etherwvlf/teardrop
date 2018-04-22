@@ -1,0 +1,25 @@
+<!doctype html>
+<title>Teardrop</title>
+<style>
+  *{
+    padding-top:3px;
+    font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+    font-size:22px;
+    background-color:black;
+    color:lime;
+  }
+</style>
+
+<div id="welcome" style="text-align:right;">Server: {{ hostname }}<br />
+</div>
+
+<div style="overflow: auto;text-align:center;">
+  <iframe src="/{{path}}/rooms" name="chatframe" style="width:90vw; height:90vh;" frameBorder=0></iframe>
+</div>
+
+<div style="position: fixed; bottom: 5px;">
+  <form id="deadform" action="/{{ path }}/rooms" method="POST">
+    <input type="text" placeholder="Type message and press enter..." name="dropdata" style="width:90vw; height:40px;border:none;" autofocus required> 
+    <input type="submit" value="Send" style="margin-top:5px; float:right; display:none;">
+  </form>
+</div>
